@@ -1,0 +1,1 @@
+module.exports.OauthError = require('./lib/oauth/error/OauthError');

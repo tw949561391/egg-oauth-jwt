@@ -56,5 +56,10 @@ exports.oauthJwt = {
     primaryKeyBefore: '-----BEGIN RSA PRIVATE KEY-----',
     primaryKeyAfter: '-----END RSA PRIVATE KEY-----',
     publicKeyBefore: '-----BEGIN CERTIFICATE-----',
-    publicKeyAfter: '-----END CERTIFICATE-----'
+    publicKeyAfter: '-----END CERTIFICATE-----',
+    oauth: {
+        accessTokenLifeTime: 3600,
+        refreshTokenLifeTime: 864000,
+        tokenType: 'Bearer'
+    }
 };

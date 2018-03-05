@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const OAuth2Server = require('./lib/server');
+const OAuth2ServerBuilder = require('./lib/server');
 const Jwt = require('jsonwebtoken');
 const util = require('util');
 
@@ -19,7 +19,7 @@ module.exports = app => {
     }
     try {
         const model = new Model(app);
-        app.oauthJwt = new OAuth2Server(config, model);
+        app.oauthJwt = new OAuth2ServerBuilder(config, model,app.logger);
         app.coreLogger.info('[egg-oauth-jwt] init success');
     } catch (e) {
         app.coreLogger.error('[egg-oauth-jwt] init error, %s', e.message);

@@ -58,7 +58,8 @@ exports.oauthJwt = {
     publicKeyBefore: '-----BEGIN CERTIFICATE-----',
     publicKeyAfter: '-----END CERTIFICATE-----',
     oauth: {
-        accessTokenLifeTime: 3600,
+        clientSide: false,
+        accessTokenLifeTime: 7200,
         refreshTokenLifeTime: 864000,
         tokenType: 'Bearer'
     }

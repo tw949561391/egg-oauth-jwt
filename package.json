@@ -1,6 +1,6 @@
 {
   "name": "egg-oauth-jwt",
-  "version": "1.4.0",
+  "version": "1.4.2",
   "description": "",
   "eggPlugin": {
     "name": "oauthJwt"
@@ -11,7 +11,7 @@
     "egg-plugin"
   ],
   "dependencies": {
-    "jsonwebtoken": "^8.1.1"
+    "jsonwebtoken": "^8.2.0"
   },
   "devDependencies": {
     "autod": "^3.0.0",

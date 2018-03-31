@@ -53,10 +53,6 @@ exports.oauthJwt = {
     '/ICgdZD+rxwxf8Vb/6fntKywWSLgwKH3mJ+Z0kRlpq1g1oieiOm1/gpZ35s0Yuor\n' +
     'XZba9ptfLCYSggg/qc3d3d0tbHplKYkwFm7f5ORGHDSD5SJm+gI7RPE+4bO8q79R\n' +
     'PAfbG1UGuJ0b/oigagciHhJp851SQRYf3JuNSc17BnK2L5IEtzjqr+Q=',
-    primaryKeyBefore: '-----BEGIN RSA PRIVATE KEY-----',
-    primaryKeyAfter: '-----END RSA PRIVATE KEY-----',
-    publicKeyBefore: '-----BEGIN CERTIFICATE-----',
-    publicKeyAfter: '-----END CERTIFICATE-----',
     oauth: {
         clientSide: false,
         accessTokenLifeTime: 7200,

@@ -3,25 +3,14 @@
 const path = require('path');
 const OAuth2ServerBuilder = require('./lib/server');
 const Jwt = require('jsonwebtoken');
-const util = require('util');
 
 module.exports = app => {
     app.coreLogger.info('[egg-oauth-jwt] init begin');
     app.Jwt = Jwt;
     const config = app.config.oauthJwt;
     const extendModelFileName = config.extend || 'oauth';
-    const BaseModel = app.loader.loadFile(path.join(__dirname, './lib/default-model.js'));
-    let Model = app.loader.loadFile(path.join(app.config.baseDir, `app/extend/${extendModelFileName}.js`));
-    if (Model) {
-        util.inherits(Model, BaseModel);
-    } else {
-        Model = BaseModel;
-    }
-    try {
-        const model = new Model(app);
-        app.oauthJwt = new OAuth2ServerBuilder(config, model,app.logger);
-        app.coreLogger.info('[egg-oauth-jwt] init success');
-    } catch (e) {
-        app.coreLogger.error('[egg-oauth-jwt] init error, %s', e.message);
-    }
+    let Model = require(path.join(app.config.baseDir, `app/extend/${extendModelFileName}.js`));
+    const model = new Model(app);
+    app.oauthJwt = new OAuth2ServerBuilder(config, model, app.logger);
+    app.coreLogger.info('[egg-oauth-jwt] init success');
 };

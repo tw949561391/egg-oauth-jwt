@@ -1,6 +1,6 @@
 {
   "name": "egg-oauth-jwt",
-  "version": "1.4.3",
+  "version": "1.0.0",
   "description": "",
   "eggPlugin": {
     "name": "oauthJwt"
@@ -11,16 +11,16 @@
     "egg-plugin"
   ],
   "dependencies": {
-    "jsonwebtoken": "^8.2.0"
+    "jsonwebtoken": "^8.3.0"
   },
   "devDependencies": {
     "autod": "^3.0.0",
     "autod-egg": "^1.0.0",
-    "egg": "^2.3.0",
-    "egg-bin": "^4.4.0",
+    "egg": "^2.0.0",
+    "egg-bin": "^4.3.0",
     "egg-ci": "^1.8.0",
     "egg-mock": "^3.13.0",
-    "eslint": "^4.18.1",
+    "eslint": "^4.11.0",
     "eslint-config-egg": "^5.1.0"
   },
   "engines": {
@@ -36,9 +36,7 @@
     "autod": "autod"
   },
   "files": [
-    "app",
     "app.js",
-    "lib",
     "agent.js",
     "config"
   ],

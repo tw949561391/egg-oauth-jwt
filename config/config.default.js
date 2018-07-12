@@ -57,6 +57,7 @@ exports.oauthJwt = {
         clientSide: false,
         accessTokenLifeTime: 7200,
         refreshTokenLifeTime: 864000,
+        authorizationCodeLifeTime: 120,
         tokenType: 'Bearer'
     }
 };

@@ -62,6 +62,17 @@ exports.oauthjwt = {
 ## 详细配置
 
 请到 [config/config.default.js](config/config.default.js) 查看详细配置项说明。
+exports.oauthjwt = {
+    extend: 'oauth',
+    algorithm: 'RS256',
+    primaryKey: path.join(__dirname, "private.pem"),
+    publicKey: path.join(__dirname, 'public.pem'),
+    clientSide: false,
+    accessTokenLifeTime: 7200,
+    refreshTokenLifeTime: 864000,
+    authorizationCodeLifeTime: 120,
+    tokenType: 'Bearer'
+};
 
 ## 单元测试
 

@@ -17,7 +17,7 @@ describe('test/oauth-jwt.test.js', () => {
   it('should GET /', () => {
     return app.httpRequest()
       .get('/')
-      .expect('hi, oauthJwt')
+      .expect('hi, oauthjwt')
       .expect(200);
   });
 });

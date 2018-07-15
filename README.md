@@ -34,7 +34,7 @@ $ npm i egg-oauth-jwt --save
 
 ```js
 // {app_root}/config/plugin.js
-exports.oauthJwt = {
+exports.oauthjwt = {
   enable: true,
   package: 'egg-oauth-jwt',
 };
@@ -44,7 +44,7 @@ exports.oauthJwt = {
 
 ```js
 // {app_root}/config/config.default.js
-exports.oauthJwt = {
+exports.oauthjwt = {
 };
 ```
 

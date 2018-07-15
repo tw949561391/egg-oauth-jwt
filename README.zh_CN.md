@@ -47,7 +47,7 @@ egg-oauth-jwt 版本 | egg 1.x
 
 ```js
 // config/plugin.js
-exports.oauthJwt = {
+exports.oauthjwt = {
   enable: true,
   package: 'egg-oauth-jwt',
 };

@@ -2,13 +2,19 @@
 
 const path = require('path');
 const OAuth2ServerBuilder = require('./lib/server');
+const fs = require('fs');
 
 module.exports = app => {
     app.coreLogger.info('[egg-oauth-jwt] init begin');
-    const config = app.config.oauthJwt;
+    const config = app.config.oauthjwt;
     const extendModelFileName = config.extend || 'oauth';
-    const Model = require(path.join(app.config.baseDir, `app/extend/${extendModelFileName}.js`));
+    let modalPath = path.join(app.config.baseDir, `app/extend/${extendModelFileName}`);
+
+    if (!fs.existsSync(modalPath)) {
+        modalPath = './lib/oauth/default-model';
+    }
+    const Model = require(modalPath);
     const model = new Model(app);
-    app.oauthJwt = new OAuth2ServerBuilder(config, model, app.coreLogger);
+    app.oauthjwt = new OAuth2ServerBuilder(config, model, app.coreLogger);
     app.coreLogger.info('[egg-oauth-jwt] init success');
 };

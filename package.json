@@ -1,9 +1,10 @@
 {
   "name": "egg-oauth-jwt",
-  "version": "1.4.8",
-  "description": "",
+  "version": "1.5.9",
+  "description": "oauth-jwt",
   "eggPlugin": {
-    "name": "oauthJwt"
+    "name": "oauthjwt",
+    "dependencies": []
   },
   "keywords": [
     "egg",
@@ -19,7 +20,7 @@
     "egg": "^2.0.0",
     "egg-bin": "^4.3.0",
     "egg-ci": "^1.8.0",
-    "egg-mock": "^3.13.0",
+    "egg-mock": "^3.17.3",
     "eslint": "^4.11.0",
     "eslint-config-egg": "^5.1.0"
   },
@@ -44,16 +45,16 @@
     "index.js"
   ],
   "ci": {
-    "version": "8, 9"
+    "version": "8, 9, 10"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-oauth-jwt.git"
+    "url": "git+https://github.com/tw949561391/egg-oauth-jwt.git"
   },
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/tw949561391/egg/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-oauth-jwt#readme",
+  "homepage": "https://github.com/tw949561391/egg-oauth-jwt#readme",
   "author": "",
   "license": "MIT"
 }

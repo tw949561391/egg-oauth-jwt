@@ -6,7 +6,7 @@ const path = require('path');
  * @member Config#oauthJwt
  * @property {String} SOME_KEY - some description
  */
-exports.oauthJwt = {
+exports.oauthjwt = {
     extend: 'oauth',
     algorithm: 'RS256',
     primaryKey: path.join(__dirname, "private.pem"),

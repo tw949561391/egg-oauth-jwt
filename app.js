@@ -8,7 +8,7 @@ module.exports = app => {
     app.coreLogger.info('[egg-oauth-jwt] init begin');
     const config = app.config.oauthjwt;
     const extendModelFileName = config.extend || 'oauth';
-    let modalPath = path.join(app.config.baseDir, `app/extend/${extendModelFileName}`);
+    let modalPath = path.join(app.config.baseDir, `app/extend/${extendModelFileName}.js`);
 
     if (!fs.existsSync(modalPath)) {
         modalPath = './lib/oauth/default-model';

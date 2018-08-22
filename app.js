@@ -9,9 +9,8 @@ module.exports = app => {
     const config = app.config.oauthjwt;
     const extendModelFileName = config.extend || 'oauth';
     let modalPath = path.join(app.config.baseDir, `app/extend/${extendModelFileName}`);
-
     if (!fs.existsSync(modalPath)) {
-        modalPath = './lib/oauth/default-model';
+       throw new Error("no extend model");
     }
     const Model = require(modalPath);
     const model = new Model(app);

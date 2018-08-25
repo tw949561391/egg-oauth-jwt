@@ -11,7 +11,6 @@ exports.oauthjwt = {
     algorithm: 'RS256',
     primaryKey: path.join(__dirname, "private.pem"),
     publicKey: path.join(__dirname, 'public.pem'),
-    clientSide: false,
     accessTokenLifeTime: 7200,
     refreshTokenLifeTime: 864000,
     authorizationCodeLifeTime: 120,

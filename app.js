@@ -10,11 +10,12 @@ module.exports = app => {
     const extendModelFileName = config.extend || 'oauth';
     let modalPath = path.join(app.config.baseDir, `app/extend/${extendModelFileName}.js`);
 
-    if (!fs.existsSync(modalPath)) {
-        modalPath = './lib/oauth/default-model';
+    try {
+        const Model = require(modalPath);
+        const model = new Model(app);
+        app.oauthjwt = new OAuth2ServerBuilder(config, model, app.coreLogger);
+        app.coreLogger.info('[egg-oauth-jwt] init success');
+    } catch (e) {
+        app.coreLogger.error(`no extend model at app/extend/${extendModelFileName}.js`)
     }
-    const Model = require(modalPath);
-    const model = new Model(app);
-    app.oauthjwt = new OAuth2ServerBuilder(config, model, app.coreLogger);
-    app.coreLogger.info('[egg-oauth-jwt] init success');
 };

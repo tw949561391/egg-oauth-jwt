@@ -1,6 +1,6 @@
 {
   "name": "egg-oauth-jwt",
-  "version": "1.6.8",
+  "version": "1.6.9",
   "description": "oauth-jwt",
   "eggPlugin": {
     "name": "oauthjwt"
@@ -33,7 +33,8 @@
     "lint": "eslint .",
     "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
     "pkgfiles": "egg-bin pkgfiles",
-    "autod": "autod"
+    "autod": "autod",
+    "upload": "git commit ./  -m publish && git push && npm publish"
   },
   "files": [
     "app",

@@ -2,7 +2,6 @@
 
 const path = require('path');
 const OAuth2ServerBuilder = require('./lib/server');
-const fs = require('fs');
 
 module.exports = app => {
     app.coreLogger.info('[egg-oauth-jwt] init begin');
@@ -15,7 +14,7 @@ module.exports = app => {
             Model = require(modalPath);
         } catch (e) {
             app.coreLogger.info(`[egg-oauth-jwt] no extend at  "app/extend/${extendModelFileName}"`);
-            Model = require('./index').OauthModel;
+            Model = require('./index').JwtOauthModel;
         }
         const model = new Model(app);
         app.oauthjwt = new OAuth2ServerBuilder(config, model, app.coreLogger);

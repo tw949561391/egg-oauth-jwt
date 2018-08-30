@@ -9,7 +9,6 @@ module.exports = app => {
     const config = app.config.oauthjwt;
     const extendModelFileName = config.extend || 'oauth';
     let modalPath = path.join(app.config.baseDir, `app/extend/${extendModelFileName}.js`);
-
     try {
         let Model = null;
         try {

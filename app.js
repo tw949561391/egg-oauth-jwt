@@ -11,7 +11,13 @@ module.exports = app => {
     let modalPath = path.join(app.config.baseDir, `app/extend/${extendModelFileName}.js`);
 
     try {
-        const Model = require(modalPath);
+        let Model = null;
+        try {
+            Model = require(modalPath);
+        } catch (e) {
+            app.coreLogger.info(`[egg-oauth-jwt] no extend at  "app/extend/${extendModelFileName}"`);
+            Model = require('./index').OauthModel;
+        }
         const model = new Model(app);
         app.oauthjwt = new OAuth2ServerBuilder(config, model, app.coreLogger);
         app.coreLogger.info('[egg-oauth-jwt] init success');

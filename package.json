@@ -1,6 +1,6 @@
 {
   "name": "egg-oauth-jwt",
-  "version": "1.7.4",
+  "version": "1.7.5",
   "description": "oauth-jwt",
   "eggPlugin": {
     "name": "oauthjwt"
